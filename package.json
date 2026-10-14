@@ -1,6 +1,5 @@
 {
   "name": "beekeeper",
-  "version": "0.2.0",
   "private": true,
   "description": "Browser extension that tracks NYT Spelling Bee progress against the daily hints.",
   "license": "MIT",

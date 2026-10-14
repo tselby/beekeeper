@@ -32,17 +32,21 @@ It never shows you a word.
 Bee Keeper isn't in an extension store. Load it unpacked in any Chromium browser
 (Chrome, Brave, Edge, Arc):
 
-1. Clone or download this repository.
+1. Download the zip from the [latest release](https://github.com/tselby/beekeeper/releases/latest)
+   and unzip it.
 2. Open `chrome://extensions` (`brave://extensions` in Brave) and turn on **Developer mode**.
-3. Click **Load unpacked** and select the repository folder.
+3. Click **Load unpacked** and select the unzipped `beekeeper` folder.
 4. Open the Spelling Bee and press **Play** or **Continue**. The panel appears once the game starts.
 
-To update, pull the latest code, click the reload icon on the extension's card, and reload the
-puzzle tab.
+Keep the folder somewhere permanent. The browser loads the extension from it every time it starts.
+
+To update, download the new release and replace the folder's contents. Then click the reload icon
+on the extension's card and reload the puzzle tab.
 
 ## Development
 
-No build step and no dependencies. You need Node 18+ for the tests.
+No build step and no dependencies. You need Node 18+ for the tests. You can also load the
+repository folder itself with **Load unpacked**.
 
 ```
 npm test                       # engine unit tests (node --test)

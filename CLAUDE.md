@@ -13,6 +13,17 @@ Spelling Bee. Plain JS, no build, no dependencies. See README.md for the user-fa
   globals are `window.__beeKeeperEngine` and `window.__beeKeeperStarted`.
 - Panel prefs live in the page's localStorage under `beeKeeper:*`.
 
+## Releasing
+
+Releases are automatic. `.github/workflows/release.yml` runs on every push to `main`. If
+`manifest.json` has a `version` with no matching `v<version>` tag, it runs the tests, zips
+`manifest.json`, `src/`, `icons/` and `LICENSE`, and publishes a GitHub Release with that tag.
+
+- When a change should reach players, bump `version` in `manifest.json` in the same push
+  (patch for fixes, minor for features). Ask Trevor if it's unclear whether to release.
+- Don't create tags by hand. `manifest.json` is the only place the version lives.
+- After pushing, check the run with `gh run list --workflow release.yml`.
+
 ## NYT page details the extension depends on
 
 Checked October 2026. If something breaks, look here first.
