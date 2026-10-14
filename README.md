@@ -40,29 +40,6 @@ Bee Keeper isn't in an extension store. Load it unpacked in any Chromium browser
 To update, pull the latest code, click the reload icon on the extension's card, and reload the
 puzzle tab.
 
-## How it stays fair
-
-The puzzle page already holds the day's answer list. Bee Keeper reads it once, converts it into
-the same counts the hints page publishes, and discards it. Everything after that — the panel and
-every deduction — works only from those counts plus the words you've found. Bee Keeper knows
-exactly what the hints page tells you and nothing more.
-
-## How the deductions work
-
-Take one starting letter. Its remaining words form a table of two-letter start × length. You
-don't know the cells, but the hints give you every row total (remaining per two-letter start)
-and every column total (remaining per length). For a table like that, the tightest possible
-bounds on any cell are
-
-```
-max = min(row, column)
-min = max(0, row + column − words left)
-```
-
-and every value in between is possible. Any cell whose minimum is above zero becomes a
-deduction. When only one start or one length remains, Bee Keeper says so directly. These bounds
-are exact, so for a single letter there is nothing more the hints can tell you.
-
 ## Development
 
 No build step and no dependencies. You need Node 18+ for the tests.
