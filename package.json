@@ -1,0 +1,11 @@
+{
+  "name": "beekeeper",
+  "version": "0.2.0",
+  "private": true,
+  "description": "Browser extension that tracks NYT Spelling Bee progress against the daily hints.",
+  "license": "MIT",
+  "scripts": {
+    "test": "node --test test/*.test.js",
+    "icons": "python3 scripts/make_icons.py"
+  }
+}

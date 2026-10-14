@@ -1,0 +1,33 @@
+{
+  "manifest_version": 3,
+  "name": "Bee Keeper",
+  "version": "0.2.0",
+  "description": "Tracks the words you've found in the NYT Spelling Bee against the hints grid and two-letter list, and works out what's left.",
+  "icons": {
+    "16": "icons/icon16.png",
+    "32": "icons/icon32.png",
+    "48": "icons/icon48.png",
+    "128": "icons/icon128.png"
+  },
+  "action": {
+    "default_title": "Bee Keeper",
+    "default_icon": {
+      "16": "icons/icon16.png",
+      "32": "icons/icon32.png"
+    }
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "https://www.nytimes.com/puzzles/spelling-bee*"
+      ],
+      "js": [
+        "src/engine.js",
+        "src/content.js"
+      ],
+      "world": "MAIN",
+      "run_at": "document_idle"
+    }
+  ],
+  "homepage_url": "https://github.com/tselby/beekeeper"
+}
